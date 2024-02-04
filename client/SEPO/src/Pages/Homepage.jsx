@@ -41,7 +41,7 @@ const Home = () => {
     setFilteredEvents(filtered);
   }
 
-  return (
+  return Home(
     <div>
       {loggedIn ? (
         <div>
