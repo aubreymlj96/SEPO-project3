@@ -32,10 +32,11 @@ export const SAVE_EVENT = gql`
             email
             savedEvents{
                 _id
+                name
                 sport
                 description
                 participants
-                dateOfEvent
+                time
         }
     }
 } 

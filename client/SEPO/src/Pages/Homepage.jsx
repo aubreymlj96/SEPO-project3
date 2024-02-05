@@ -25,7 +25,7 @@ const Home = () => {
     if (username === 'username' && password === 'password') {
       setLoggedIn(true);
     } else {
-      setError('Invalid username or password');
+      setError('Invalid username or password', error);
     }
   };
 
