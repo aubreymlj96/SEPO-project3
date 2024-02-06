@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { getGoogleMapsData } from '../sepo/utils/api';
+import { getMapQuestData } from '../sepo/utils/api'; // Import your MapQuest API function
 
 const CreateEvent = () => {
   const history = useHistory();
@@ -23,48 +23,49 @@ const CreateEvent = () => {
     setDateTime(event.target.value);
   };
 
-  // Handle location input with Google Maps Autocomplete
+  // Handle location input with MapQuest Autocomplete
   const handleLocationChange = async (event) => {
     const newLocation = event.target.value;
     setLocation(newLocation);
 
-    // Fetch Google Maps data based on the entered location
-    const googleMapsData = await getGoogleMapsData(newLocation);
+    // Fetch MapQuest data based on the entered location
+    const mapQuestData = await getMapQuestData(newLocation);
 
-    // Use the Google Maps data as needed
-    console.log('Google Maps Data:', googleMapsData);
+    // Use the MapQuest data as needed
+    console.log('MapQuest Data:', mapQuestData);
 
-    // Update the map with the new location (assuming 'map' is a Google Maps object)
-    if (map && googleMapsData.results && googleMapsData.results[0]) {
-      const { lat, lng } = googleMapsData.results[0].geometry.location;
-      map.setCenter(new window.google.maps.LatLng(lat, lng));
+    // Update the map with the new location (assuming 'map' is a MapQuest object)
+    if (map && mapQuestData.results && mapQuestData.results[0]) {
+      const { lat, lng } = mapQuestData.results[0].locations[0].latLng;
+      map.setCenter({ lat, lng });
       // You can also add a marker on the map to indicate the selected location
     }
   };
 
-  // Initialize Google Maps Autocomplete once the component is mounted
+  // Initialize MapQuest Autocomplete once the component is mounted
   useEffect(() => {
-    // Check if the Google Maps API is loaded
-    if (window.google && window.google.maps) {
-      // Initialize the Autocomplete service
-      const autocomplete = new window.google.maps.places.Autocomplete(document.getElementById('location-input'));
+    // Initialize the Autocomplete service
+    const placesAutocomplete = places({
+      key: 'YOUR_MAPQUEST_API_KEY',
+      container: document.getElementById('location-input'),
+      language: 'en',
+    });
 
-      // Listen for the 'place_changed' event
-      autocomplete.addListener('place_changed', () => {
-        const place = autocomplete.getPlace();
-        console.log('Selected Place:', place);
+    // Listen for the 'change' event
+    placesAutocomplete.on('change', (e) => {
+      const place = e.suggestion;
+      console.log('Selected Place:', place);
 
-        if (place.geometry) {
-          const { lat, lng } = place.geometry.location;
-          setMap((prevMap) => {
-            if (prevMap) {
-              prevMap.setCenter(new window.google.maps.LatLng(lat(), lng()));
-            }
-            return prevMap;
-          });
-        }
-      });
-    }
+      if (place.latlng) {
+        const { lat, lng } = place.latlng;
+        setMap((prevMap) => {
+          if (prevMap) {
+            prevMap.setCenter({ lat, lng });
+          }
+          return prevMap;
+        });
+      }
+    });
   }, []);
 
   // Handle form submission
