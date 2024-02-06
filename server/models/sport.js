@@ -2,6 +2,14 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const sportSchema = new Schema ({
+    name: {
+      type: String,
+      required: true,
+    },
+    players: {
+      type: Number,
+      required: true
+    },
     eventCreator:{
         type: String,
         required: true,

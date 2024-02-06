@@ -9,6 +9,8 @@ type User {
 
 type Event {
     _id: ID
+    name: String!
+    players: INT
     eventCreator: String
     eventText: String
     createdAt: String
@@ -39,7 +41,7 @@ type Auth {
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addEvent(eventText: String!): Event
+    addEvent(name: String!, players: INT!, eventText: String!): Event
     addComment(eventId: ID!, commentText: String!): Event
     removeEvent(eventId: ID!): Event
     removeComment(eventId: ID!, commentID: ID!): Event
