@@ -1,7 +1,7 @@
 // client/pages/CreateEvent.jsx
 
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // Assuming you're using React Router for navigation
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { getGoogleMapsData } from '../sepo/utils/api';
 
 const CreateEvent = () => {
@@ -11,6 +11,7 @@ const CreateEvent = () => {
   const [sport, setSport] = useState('');
   const [dateTime, setDateTime] = useState('');
   const [location, setLocation] = useState('');
+  const [map, setMap] = useState(null);
 
   // Handle sport selection
   const handleSportChange = (event) => {
@@ -22,7 +23,7 @@ const CreateEvent = () => {
     setDateTime(event.target.value);
   };
 
-  // Handle location input with Google Maps API
+  // Handle location input with Google Maps Autocomplete
   const handleLocationChange = async (event) => {
     const newLocation = event.target.value;
     setLocation(newLocation);
@@ -32,7 +33,39 @@ const CreateEvent = () => {
 
     // Use the Google Maps data as needed
     console.log('Google Maps Data:', googleMapsData);
+
+    // Update the map with the new location (assuming 'map' is a Google Maps object)
+    if (map && googleMapsData.results && googleMapsData.results[0]) {
+      const { lat, lng } = googleMapsData.results[0].geometry.location;
+      map.setCenter(new window.google.maps.LatLng(lat, lng));
+      // You can also add a marker on the map to indicate the selected location
+    }
   };
+
+  // Initialize Google Maps Autocomplete once the component is mounted
+  useEffect(() => {
+    // Check if the Google Maps API is loaded
+    if (window.google && window.google.maps) {
+      // Initialize the Autocomplete service
+      const autocomplete = new window.google.maps.places.Autocomplete(document.getElementById('location-input'));
+
+      // Listen for the 'place_changed' event
+      autocomplete.addListener('place_changed', () => {
+        const place = autocomplete.getPlace();
+        console.log('Selected Place:', place);
+
+        if (place.geometry) {
+          const { lat, lng } = place.geometry.location;
+          setMap((prevMap) => {
+            if (prevMap) {
+              prevMap.setCenter(new window.google.maps.LatLng(lat(), lng()));
+            }
+            return prevMap;
+          });
+        }
+      });
+    }
+  }, []);
 
   // Handle form submission
   const handleSubmit = (event) => {
@@ -89,8 +122,11 @@ const CreateEvent = () => {
         {/* Location Input */}
         <label>
           Location:
-          <input type="text" value={location} onChange={handleLocationChange} />
+          <input id="location-input" type="text" value={location} onChange={handleLocationChange} />
         </label>
+
+        {/* Map Display */}
+        <div id="map" style={{ width: '100%', height: '300px', marginBottom: '10px' }} />
 
         {/* Submit Button */}
         <button type="submit">Create Event</button>
