@@ -19,7 +19,7 @@ function Footer(){
             <div className="socials text-right">
             <h3>Check Out Our Instagram</h3>
                 <a href=''>
-                <img className="pp-images1" src="/" alt="insta"/>
+                <img className="pp-images1" src="/vecteezy_instagram-logo-png-instagram-logo-transparent-png_23986521.png" alt="insta"/>
                 </a>
             </div>
             <p>@2024 SEPO, Inc. All Rights Reserved. Contributors - Garrett Shepherd, Evan Fodemski, Aubrey Johnson</p>
