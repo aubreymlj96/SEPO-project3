@@ -96,3 +96,5 @@ const signUp = () => {
         </main>
       );
 }
+
+export default signUp;
