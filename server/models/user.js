@@ -22,7 +22,7 @@ const userSchema = new Schema({
     events: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'sport',
+            ref: 'Sport',
 
         },
     ],
@@ -41,7 +41,7 @@ userSchema.pre('save', async function (next) {
         return bcrypt.compare(password, this.password);
     };
 
-const User = model('user', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User
 
