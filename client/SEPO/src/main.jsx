@@ -17,9 +17,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App.jsx'
 import JoinEvent from './Pages/JoinEvent.jsx'
 import MyEvents from './Pages/Myevents.jsx'
-import EventPlanner from './Pages/Eventplanner.jsx'
+import EventPlanner from './Pages/CreateEvent.jsx'
 import Login from './Pages/login.jsx'
-import SignUp from './Pages/sighnup.jsx'
+import SignUp from './Pages/Signup.jsx'
 import Home from './Pages/Homepage.jsx'
 
 const router = createBrowserRouter([
@@ -41,19 +41,19 @@ const router = createBrowserRouter([
         element: <Login />
       },
       {
-        path: 'signup',
+        path: 'sign up',
         element: <SignUp />
       },
       {
-        path: 'joinevent',
+        path: 'join event',
         element: <JoinEvent />
       },
       {
-        path: 'myevents',
+        path: 'my events',
         element: <MyEvents />
       },
       {
-        path: 'eventplanner',
+        path: 'event planner',
         element: <EventPlanner />
       },
     ]

@@ -1,4 +1,16 @@
 import React, { useState } from 'react';
+const events = [
+  { name: 'Baseball', location: 'Denver', description: 'description'},
+  { name: 'Basketball', location: 'Colorado Springs', description: 'description'},
+  { name: 'Football', location: 'Vail', description: 'description'},
+  { name: 'Baseball', location: 'Vail', description: 'description'},
+  { name: 'Basketball', location: 'Colorado Springs', description: 'description'},
+  { name: 'Football', location: 'Denver', description: 'description'},
+  { name: 'Baseball', location: 'Vail', description: 'description'},
+  { name: 'Basketball', location: 'Colorado Springs', description: 'description'},
+  { name: 'Football', location: 'Denver', description: 'description'},
+  { name: 'Baseball', location: 'Vail', description: 'description'},
+]
 
 const Home = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -8,22 +20,10 @@ const Home = () => {
   const [locationInput, setLocationInput] = useState('');
   const [filteredEvents, setFilteredEvents] = useState('')
 
-  const events = [
-    { name: 'Baseball', location: 'Denver', description: 'description'},
-    { name: 'Basketball', location: 'Colorado Springs', description: 'description'},
-    { name: 'Football', location: 'Vail', description: 'description'},
-    { name: 'Baseball', location: 'Vail', description: 'description'},
-    { name: 'Basketball', location: 'Colorado Springs', description: 'description'},
-    { name: 'Football', location: 'Denver', description: 'description'},
-    { name: 'Baseball', location: 'Vail', description: 'description'},
-    { name: 'Basketball', location: 'Colorado Springs', description: 'description'},
-    { name: 'Football', location: 'Denver', description: 'description'},
-    { name: 'Baseball', location: 'Vail', description: 'description'},
-  ]
-
   const handleLogin = () => {
     if (username === 'username' && password === 'password') {
-      setLoggedIn(true);
+      // setLoggedIn(true);
+
     } else {
       setError('Invalid username or password', error);
     }
@@ -41,10 +41,10 @@ const Home = () => {
     setFilteredEvents(filtered);
   }
 
-  return Home(
-    <div class='container'>
+  return (
+    <div className='container'>
       {loggedIn ? (
-        <div class='homeBody'>
+        <div className='homeBody'>
           <h2 className='welcomeMessage'>Welcome, {username}!</h2>
           <button className='logoutButton' onClick={handleLogout}>Logout</button>
           <div className='locationInput'>

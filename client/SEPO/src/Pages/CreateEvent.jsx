@@ -1,11 +1,11 @@
 // client/pages/CreateEvent.jsx
 
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { getMapQuestData } from '../../utils/api'; // Import your MapQuest API function
 
 const CreateEvent = () => {
-  const history = useHistory();
+  // const history = useHistory();
 
   // State to store form inputs
   const [sport, setSport] = useState('');
