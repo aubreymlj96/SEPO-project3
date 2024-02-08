@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { getMapQuestData } from '../sepo/utils/api'; // Import your MapQuest API function
+import { getMapQuestData } from '../../utils/api'; // Import your MapQuest API function
 
 const CreateEvent = () => {
   const history = useHistory();
@@ -37,8 +37,12 @@ const CreateEvent = () => {
     // Update the map with the new location (assuming 'map' is a MapQuest object)
     if (map && mapQuestData.results && mapQuestData.results[0]) {
       const { lat, lng } = mapQuestData.results[0].locations[0].latLng;
-      map.setCenter({ lat, lng });
-      // You can also add a marker on the map to indicate the selected location
+      setMap((prevMap) => {
+        if (prevMap) {
+          prevMap.setCenter({ lat, lng });
+        }
+        return prevMap;
+      });
     }
   };
 
@@ -46,7 +50,7 @@ const CreateEvent = () => {
   useEffect(() => {
     // Initialize the Autocomplete service
     const placesAutocomplete = places({
-      key: 'YOUR_MAPQUEST_API_KEY',
+      key: 'YShBjYux21G3IIZulMOwJ1UqYpLaPAdx',
       container: document.getElementById('location-input'),
       language: 'en',
     });
