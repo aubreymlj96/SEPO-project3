@@ -20,35 +20,35 @@ const Home = () => {
   const [locationInput, setLocationInput] = useState('');
   const [filteredEvents, setFilteredEvents] = useState('')
 
-  // const handleLogin = () => {
-  //   if (username === 'username' && password === 'password') {
-  //     // setLoggedIn(true);
+  const handleLogin = () => {
+    if (username === 'username' && password === 'password') {
+      // setLoggedIn(true);
 
-  //   } else {
-  //     setError('Invalid username or password', error);
-  //   }
-  // };
+    } else {
+      setError('Invalid username or password', error);
+    }
+  };
 
-  // const handleLogout = () => {
-  //   setLoggedIn(false);
-  //   setUsername('');
-  //   setPassword('');
-  // };
+  const handleLogout = () => {
+    setLoggedIn(false);
+    setUsername('');
+    setPassword('');
+  };
 
-  // const handleLocationChange = (e) => {
-  //   setLocationInput(e.target.value);
-  //   const filtered = events.filter(event => event.location.toLowerCase().includes(e.target.value.toLowerCase()))
-  //   setFilteredEvents(filtered);
-  // }
+  const handleLocationChange = (e) => {
+    setLocationInput(e.target.value);
+    const filtered = events.filter(event => event.location.toLowerCase().includes(e.target.value.toLowerCase()))
+    setFilteredEvents(filtered);
+  }
 
-  return Home(
-    <div class='container'>
+  return (
+    <div className='container'>
       {loggedIn ? (
-        <div class='homeBody'>
+        <div className='homeBody'>
           <h2 className='welcomeMessage'>Welcome, {username}!</h2>
-          {/* <button className='logoutButton' onClick={handleLogout}>Logout</button> */}
+          <button className='logoutButton' onClick={handleLogout}>Logout</button>
           <div className='locationInput'>
-            {/* <input type='text' value={locationInput} onChange={handleLocationChange} placeholder='Enter Location'/> */}
+            <input type='text' value={locationInput} onChange={handleLocationChange} placeholder='Enter Location'/>
           </div>
           <div className="aboutMessage">
             <h2 className='sectionHeader'>Why Choose SEPO?</h2>
@@ -62,19 +62,19 @@ const Home = () => {
           </div>
           <h2 className='sectionHeader'>Upcoming Events</h2>
           <div className='eventCards'>
-            {/* {filteredEvents.map((event, index) => (
+            {filteredEvents.map((event, index) => (
                 <div className='card' key={index}>
                     <h3 className='eventTitle'>{event.name}</h3>
                     <p className='eventDescription'>{event.description}</p>
                 </div>
-            ))} */}
+            ))}
           </div>
         </div>
       ) : (
         <div className='homeBody'>
-          {/* <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} /> */}
-          {/* <button className='loginButton' onClick={handleLogin}>Login</button> */}
+          <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <button className='loginButton' onClick={handleLogin}>Login</button>
           {error && <p className='errorMessage'>{error}</p>}
           <div className="aboutMessage">
             <h2 className='sectionHeader'>Why Choose SEPO?</h2>
