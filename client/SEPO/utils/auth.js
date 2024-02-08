@@ -1,5 +1,6 @@
-import decode from 'jwt-decode';
-
+// import decode from 'jwt-decode';
+import {jwtDecode as decode} from 'jwt-decode';
+// const {decode} = require('jwt-decode');
 class AuthService {
   getProfile() {
     return decode(this.getToken());
@@ -38,4 +39,5 @@ class AuthService {
   }
 }
 
+// module.exports = new AuthService();
 export default new AuthService();

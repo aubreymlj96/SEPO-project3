@@ -41,19 +41,19 @@ const router = createBrowserRouter([
         element: <Login />
       },
       {
-        path: 'signup',
+        path: 'sign up',
         element: <SignUp />
       },
       {
-        path: 'joinevent',
+        path: 'join event',
         element: <JoinEvent />
       },
       {
-        path: 'myevents',
+        path: 'my events',
         element: <MyEvents />
       },
       {
-        path: 'eventplanner',
+        path: 'event planner',
         element: <EventPlanner />
       },
     ]
