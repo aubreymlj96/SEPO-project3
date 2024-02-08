@@ -2,14 +2,15 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const sportSchema = new Schema ({
-    name: {
-      type: String,
-      required: true,
-    },
-    players: {
-      type: Number,
-      required: true
-    },
+  name: {
+    type: String,
+    required: true,
+  },
+  players: {
+    type: Number,
+    required: true
+  },
+
     eventCreator:{
         type: String,
         required: true,
@@ -21,6 +22,10 @@ const sportSchema = new Schema ({
     minlength: 1,
     maxlength: 280,
     trim: true,
+    },
+    eventType: {
+      type: String,
+      enum: ['Football','Baseball', 'Basketball']
     },
 
     createdAt: {
@@ -46,9 +51,14 @@ const sportSchema = new Schema ({
             default: Date.now,
             get: (timestamp) => dateFormat(timestamp),
           },
+          username: {
+            type:String
+          }
         },
       ],
 });
 
+const Sport = model('Sport', sportSchema);
 
-module.exports = sportSchema;
+
+module.exports = Sport;
