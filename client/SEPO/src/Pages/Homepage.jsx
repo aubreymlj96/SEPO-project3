@@ -42,9 +42,9 @@ const Home = () => {
   }
 
   return (
-    <div class='container'>
+    <div className='container'>
       {loggedIn ? (
-        <div class='homeBody'>
+        <div className='homeBody'>
           <h2 className='welcomeMessage'>Welcome, {username}!</h2>
           <button className='logoutButton' onClick={handleLogout}>Logout</button>
           <div className='locationInput'>
