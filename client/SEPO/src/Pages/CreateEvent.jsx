@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { getMapQuestData } from '../SEPO/utils/api'; // Import your MapQuest API function
+import { getMapQuestData } from '../../utils/api'; // Import your MapQuest API function
 
 const CreateEvent = () => {
   const history = useHistory();

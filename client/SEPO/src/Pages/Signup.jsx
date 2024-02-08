@@ -2,53 +2,63 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../SEPO/utils/mutations';
+import { ADD_USER } from '../../utils/mutations';
 
-import auth from '../SEPO/utils/auth';
+import auth from '../../utils/auth';
 
-const Login = (props) => {
-    const [formState, setFormState] = useState({ email: '', password: ''});
-    const [login, { error, data}] = useMutation(LOGIN_USER);
+const signUp = () => {
+    const [formState, setFormState] = useState({
+        username: '',
+        email: '',
+        password: '',
+    });
+    const [addUser, {error, data}] = useMutation(ADD_USER);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
 
         setFormState({
-        ...formState,
-        [name]: value, 
+            ...formState,
+            [name]: value,
         });
     };
 
-    const handleFormSub = async (event) => {
+    const hanleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(formState);
+        console.log(formState)
+
         try {
-            const { data } = await login({
+            const { data } = await addUser ({
                 variables: {...formState},
             });
-            auth.login(data.login.token);
+
+            auth.login(data.addUser.token);
         } catch(err) {
-            console.error(err, 'Something went wrong when trying to login!')
+            console.error(err)
         }
-        setFormState({
-            email: '',
-            password: '',
-          });
     };
 
     return (
-        <main className="logMain">
-          <div className="">
-            <div className="">
-              <h4 className="">Login</h4>
-              <div className="">
+        <main className="flex-row justify-center mb-4">
+          <div className="col-12 col-lg-10">
+            <div className="card">
+              <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+              <div className="card-body">
                 {data ? (
                   <p>
-                    Your logged in! You may now head{' '}
+                    Success! You may now head{' '}
                     <Link to="/">back to the homepage.</Link>
                   </p>
                 ) : (
-                  <form onSubmit={handleFormSub}>
+                  <form onSubmit={handleFormSubmit}>
+                    <input
+                      className="form-input"
+                      placeholder="Your username"
+                      name="username"
+                      type="text"
+                      value={formState.name}
+                      onChange={handleChange}
+                    />
                     <input
                       className="form-input"
                       placeholder="Your email"
@@ -76,7 +86,7 @@ const Login = (props) => {
                 )}
     
                 {error && (
-                  <div className="my-3 p-3 bg-danger text-white">
+                  <div className="">
                     {error.message}
                   </div>
                 )}
@@ -85,6 +95,4 @@ const Login = (props) => {
           </div>
         </main>
       );
-};
-
-export default Login;
+}
