@@ -33,13 +33,13 @@
 // }
 
 // export default App
-
 import './App.css';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Footer from './components/footer';
+import Footer from './components/Footer';
+import CreateEvent from './pages/CreateEvent'; // Correct import
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -71,4 +71,3 @@ function App() {
 }
 
 export default App;
-

@@ -20,4 +20,3 @@ export const getMapQuestData = async (location) => {
   }
 };
 
-// export default api;

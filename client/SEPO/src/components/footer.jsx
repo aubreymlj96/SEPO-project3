@@ -5,7 +5,7 @@ function Footer(){
         <footer className="footer blue">
             <div className="footerContainer">
             <div className="footer-logo left">
-                <a href="/homepage">
+                <a href="/Homepage">
                 <img className="footlogo" src='/SEPO-logos_transparent.png' alt='SEPO Logo'/>
                 </a>
             </div>
