@@ -4,7 +4,9 @@ type User {
     username: String
     email: String
     password: String
+
     events: [Sport]!
+  
 }
 
 type Sport {
@@ -53,4 +55,5 @@ type Auth {
 `;
 
 module.exports = typeDefs;
+
 

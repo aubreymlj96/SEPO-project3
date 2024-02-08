@@ -10,6 +10,7 @@ const sportSchema = new Schema ({
     type: Number,
     required: true
   },
+
     eventCreator:{
         type: String,
         required: true,
