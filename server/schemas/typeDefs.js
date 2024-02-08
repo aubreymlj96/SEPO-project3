@@ -15,7 +15,7 @@ type Sport {
     players: Int
     eventCreator: String
     eventText: String
-    createdAt: Stringcd sepo
+    createdAt: String
     comments: [Comment]!
     eventType: String
 }
