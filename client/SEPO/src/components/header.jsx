@@ -3,9 +3,10 @@ import Home from '../Pages/Homepage';
 import JoinEvent from '../Pages/JoinEvent';
 import MyEvents from '../Pages/Myevents';
 import CreateEvent from '../Pages/CreateEvent'
-import SignUp from '../Pages/sighnup';
+import SignUp from '../Pages/Signup';
 import Login from '../Pages/login';
 import Nav from './Navbar';
+// import '../index.css'
 
 function Header(){
     const loadPage = () => {
@@ -29,6 +30,7 @@ function Header(){
 
     return (
         <div>
+            <nav class='header'>
             <nav className='header'>
                 <img src="./SEPO-logos_black.png" alt="logo-header" id="logoheader"/>
                 <div>

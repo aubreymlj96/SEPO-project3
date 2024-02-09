@@ -1,11 +1,13 @@
-#logoheader {
+/* #logoheader {
   height: 60px;
   margin-bottom: 10px;
   margin-top: 10px;
-}
+} */
 
 body{
   background-color: lavender;
+  margin: 0 auto;
+  padding: 0;
 }
 
 main{
@@ -22,7 +24,11 @@ main{
 }
 
 .header{
-  border: solid black 2px;
+  background-color: lightskyblue;
+  /* font-family: cursive; */
+  color: #fff;
+  padding: 10px;
+  border: solid black 1px;
 }
 
 .homeBody {
@@ -122,13 +128,12 @@ footer {
   font-style: italic;
   background-color: lightgray;
   border: solid black 2px;
-  display: flex;
+  width: 100%;
   text-align: center;
-  padding: 10px;
-  position: relative;
-  /* margin: auto; */
+  padding: 20px;
+  position: fixed;
   bottom: 0;
-  width: 200%;
+  left: 0;
 }
 
 .footerContent {

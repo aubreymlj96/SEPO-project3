@@ -8,6 +8,8 @@ import CreateEvent from './Pages/CreateEvent.jsx'
 import Login from './Pages/login.jsx'
 import SignUp from './Pages/Signup.jsx'
 import Home from './Pages/Homepage.jsx'
+import Header from './components/header.jsx'
+import './index.css'
 
 // Define handleCreateEvent function
 const handleCreateEvent = (newEvent) => {
