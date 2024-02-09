@@ -44,38 +44,39 @@ const CreateEvent = ({ onCreateEvent }) => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h1>Create an Event</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="event-form" onSubmit={handleSubmit}>
         {/* Sport Selection */}
-        <label>
-          Choose a sport:
-          <select value={sport} onChange={handleSportChange}>
+        <div className="form-group">
+          <label htmlFor="sport">Choose a sport:</label>
+          <select id="sport" value={sport} onChange={handleSportChange}>
             <option value="">Select a sport</option>
             <option value="soccer">Soccer</option>
             <option value="football">Football</option>
             <option value="baseball">Baseball</option>
             <option value="basketball">Basketball</option>
           </select>
-        </label>
-
+        </div>
+  
         {/* Date and Time Input */}
-        <label>
-          Date and Time:
-          <input type="datetime-local" value={dateTime} onChange={handleDateTimeChange} />
-        </label>
-
+        <div className="form-group">
+          <label htmlFor="dateTime">Date and Time:</label>
+          <input id="dateTime" type="datetime-local" value={dateTime} onChange={handleDateTimeChange} />
+        </div>
+  
         {/* Location Input */}
-        <label>
-          Location:
-          <input type="text" value={location} onChange={handleLocationChange} />
-        </label>
-
+        <div className="form-group">
+          <label htmlFor="location">Location:</label>
+          <input id="location" type="text" value={location} onChange={handleLocationChange} />
+        </div>
+  
         {/* Submit Button */}
         <button type="submit">Create Event</button>
       </form>
     </div>
   );
+  
 };
 
 // Add prop types validation
