@@ -71,10 +71,12 @@ const Home = () => {
           </div>
         </div>
       ) : (
+        <div className='mainHeader'>
+        <h1>Placeholder for Slogan</h1>
         <div className='homeBody'>
-          <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+          {/* <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-          <button className='loginButton' onClick={handleLogin}>Login</button>
+          <button className='loginButton' onClick={handleLogin}>Login</button> */}
           {error && <p className='errorMessage'>{error}</p>}
           <div className="aboutMessage">
             <h2 className='sectionHeader'>Why Choose SEPO?</h2>
@@ -85,6 +87,7 @@ const Home = () => {
             <p className='message1'>Seeking motivation to stay active? Our events cater to various levels of competitiveness, ensuring you can choose the intensity that aligns with your fitness aspirations.</p>
             <h2 className='sectionHeader'>Try New Sports</h2>
             <p className='message1'>No need to commit to a sport that you are uncertain about. All events contain specifics about skill level. All you have to do is arrive and give it a try!</p>
+          </div>
           </div>
         </div>
       )}
