@@ -2,11 +2,11 @@ import React from "react";
 
 function Footer(){
     return (
-        <footer className="footer blue">
+        <footer className="footer">
             <div className="footerContainer">
             <div className="footer-logo left">
-                <a href="/homepage">
-                <img className="footlogo" src='/SEPO-logos_transparent.png' alt='SEPO Logo'/>
+                <a href="/home">
+                <img className="footlogo" src='/SEPO-logos_black.png' alt='SEPO Logo' id='logofooter'/>
                 </a>
             </div>
             <div className="footerContent text-centered">
@@ -19,7 +19,7 @@ function Footer(){
             <div className="socials text-right">
             <h3>Check Out Our Instagram</h3>
                 <a href=''>
-                <img className="pp-images1" src="/vecteezy_instagram-logo-png-instagram-logo-transparent-png_23986521.png" alt="insta"/>
+                <img className="pp-images1 col sm" src="/vecteezy_instagram-logo-png-instagram-logo-transparent-png_23986521.png" alt="insta"/>
                 </a>
             </div>
             <p>@2024 SEPO, Inc. All Rights Reserved. Contributors - Garrett Shepherd, Evan Fodemski, Aubrey Johnson</p>
