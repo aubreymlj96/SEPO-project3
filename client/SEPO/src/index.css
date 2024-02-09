@@ -128,9 +128,10 @@ footer {
   font-style: italic;
   background-color: lightgray;
   border: solid black 2px;
+  box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.2);
   width: 100%;
   text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
   position: fixed;
   bottom: 0;
   left: 0;

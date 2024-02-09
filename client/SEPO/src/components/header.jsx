@@ -30,8 +30,7 @@ function Header(){
 
     return (
         <div>
-            <nav class='header'>
-            <nav className='header'>
+=            <nav className='header'>
                 <img src="./SEPO-logos_black.png" alt="logo-header" id="logoheader"/>
                 <div>
                     <a className='header-item' href='/home'>
