@@ -37,7 +37,7 @@ const Login = (props) => {
     };
 
     return (
-      <main className="d-flex justify-content-center mb-4">
+      <main className="d-flex justify-content-center mt-5">
           <div className="col-12 col-md-6">
               <div className="card shadow-sm">
                   <div className="card-body">
