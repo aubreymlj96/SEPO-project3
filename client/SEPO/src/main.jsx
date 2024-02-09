@@ -1,28 +1,21 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
-// import Events from './Pages/Myevents.jsx'
-// import Home from './Pages/Homepage.jsx'
-// import './index.css'
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-// )
-
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App.jsx'
 import JoinEvent from './Pages/JoinEvent.jsx'
 import MyEvents from './Pages/Myevents.jsx'
-import EventPlanner from './Pages/CreateEvent.jsx'
+import CreateEvent from './Pages/CreateEvent.jsx'
 import Login from './Pages/login.jsx'
 import SignUp from './Pages/Signup.jsx'
 import Home from './Pages/Homepage.jsx'
 import Header from './components/header.jsx'
 import './index.css'
+
+// Define handleCreateEvent function
+const handleCreateEvent = (newEvent) => {
+  console.log('Creating event:', newEvent);
+  // Your logic to handle creating an event
+}
 
 const router = createBrowserRouter([
   {
@@ -55,8 +48,8 @@ const router = createBrowserRouter([
         element: <MyEvents />
       },
       {
-        path: 'event planner',
-        element: <EventPlanner />
+        path: 'create event',
+        element: <CreateEvent onCreateEvent={handleCreateEvent} /> // Pass onCreateEvent prop
       },
     ]
   }
@@ -65,4 +58,3 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <RouterProvider router={router} />
 )
-
