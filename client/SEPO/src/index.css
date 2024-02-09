@@ -105,16 +105,35 @@ main{
   background-color: #f9f9f9;
   padding: 15px;
   border-radius: 5px;
+
 }
 
 .eventTitle {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.innertitle {
+  font-size: 25px;
+  margin-top: -15px;
 }
 
 .eventDescription {
   font-size: 14px;
   color: #555;
+}
+
+.eventBox{
+  margin-bottom: 35px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;  
+  transition: 0.3s ease-out;
+ 
+}
+
+.eventBox:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 120px 270px -90px, rgba(0, 0, 0, 0.3) 0px 40px 70px -30px;  
+  background-color: #EDEEEE;
+
 }
 
 footer {
