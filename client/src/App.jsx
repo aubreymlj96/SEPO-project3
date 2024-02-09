@@ -4,7 +4,8 @@ import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import CreateEvent from './pages/CreateEvent'; // Correct import
+import Header from './components/header';
+import CreateEvent from './Pages/CreateEvent'; // Correct import
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -33,10 +34,12 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
+      <Header/>
       <Navbar />
       <Outlet />
       <Footer />
-      <CreateEvent onCreateEvent={handleCreateEvent} /> {/* Pass onCreateEvent function */}
+      {/* <CreateEvent onCreateEvent={handleCreateEvent} /> */}
+       {/* Pass onCreateEvent function */}
     </ApolloProvider>
   );
 }

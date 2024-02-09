@@ -31,7 +31,7 @@ function Header(){
     return (
         <div>
 =            <nav className='header'>
-                <img src="./SEPO-logos_black.png" alt="logo-header" id="logoheader"/>
+                <img src="./SEPO-logos_transparent.png" alt="logo-header" id="logoheader"/>
                 <div>
                     <a className='header-item' href='/home'>
                         <span className='headerContent'></span>
@@ -39,7 +39,7 @@ function Header(){
                 </div>
             </nav>
             <div className='nav-bar'>
-            <Nav />
+            {/* <Nav /> */}
             </div>
             <main>
             </main>
