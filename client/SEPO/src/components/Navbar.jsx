@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Nav(props){
-    const tabs = ['home', 'my events', 'login', 'sign up', 'Create event'];
+    const tabs = ['HOME', 'MY EVENTS', 'LOGIN', 'SIGN UP', 'CREATE EVENT'];
     return (
         <div className='tabs center'>
             <ul className='nav' id='nav-tabs'>
                 {tabs.map((tab) => (
-                    <li className=
+                    <li id='navOptions'className=
                     {props.currentPage === tab ? "nav-item is-active" : "nav-item"}
                     key={tab}
                     >
