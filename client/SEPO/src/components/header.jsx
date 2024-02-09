@@ -28,8 +28,8 @@ function Header(){
     };
 
     return (
-        <div>
-            <nav className='header'>
+        <div className='header'>
+            <nav class='headerNav'>
                 <img src="./SEPO-logos_black.png" alt="logo-header" id="logoheader"/>
                 <div>
                     <a className='header-item' href='/home'>
