@@ -37,54 +37,64 @@ const Login = (props) => {
     };
 
     return (
-        <main className="logMain">
-          <div className="">
-            <div className="">
-              <h4 className="">Login</h4>
-              <div className="">
-                {data ? (
-                  <p>
-                    Your logged in! You may now head{' '}
-                    <Link to="/">back to the homepage.</Link>
-                  </p>
-                ) : (
-                  <form onSubmit={handleFormSub}>
-                    <input
-                      className="form-input"
-                      placeholder="Your email"
-                      name="email"
-                      type="email"
-                      value={formState.email}
-                      onChange={handleChange}
-                    />
-                    <input
-                      className="form-input"
-                      placeholder="******"
-                      name="password"
-                      type="password"
-                      value={formState.password}
-                      onChange={handleChange}
-                    />
-                    <button
-                      className="btn btn-block btn-primary"
-                      style={{ cursor: 'pointer' }}
-                      type="submit"
-                    >
-                      Submit
-                    </button>
-                  </form>
-                )}
-    
-                {error && (
-                  <div className="my-3 p-3 bg-danger text-white">
-                    {error.message}
+      <main className="d-flex justify-content-center mb-4">
+          <div className="col-12 col-md-6">
+              <div className="card shadow-sm">
+                  <div className="card-body">
+                      {data ? (
+                          <p className="text-success">
+                              You're logged in! You may now head{' '}
+                              <Link to="/" className="text-decoration-none">back to the homepage.</Link>
+                          </p>
+                      ) : (
+                        
+                          <form onSubmit={handleFormSub}>
+                            <h1>Log In:</h1>
+                              <div className="mb-3">
+                                  <input
+                                      className="form-control"
+                                      placeholder="Email"
+                                      name="email"
+                                      type="email"
+                                      value={formState.email}
+                                      onChange={handleChange}
+                                      required
+                                  />
+                              </div>
+                              <div className="mb-3">
+                                  <input
+                                      className="form-control"
+                                      placeholder="Password"
+                                      name="password"
+                                      type="password"
+                                      value={formState.password}
+                                      onChange={handleChange}
+                                      required
+                                  />
+                              </div>
+                              <button
+                                  className="btn btn-primary btn-block"
+                                  style={{ cursor: 'pointer' }}
+                                  type="submit"
+                              >
+                                  Submit
+                              </button>
+                              <p className="mt-3 text-center">
+                                  Don't have an account? <Link to="/signup" className="text-decoration-none">Sign up here</Link>
+                              </p>
+                          </form>
+                      )}
+
+                      {error && (
+                          <div className="my-3 p-3 bg-danger text-white">
+                              {error.message}
+                          </div>
+                      )}
                   </div>
-                )}
               </div>
-            </div>
           </div>
-        </main>
-      );
+      </main>
+  );
 };
 
 export default Login;
