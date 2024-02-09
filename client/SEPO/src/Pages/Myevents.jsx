@@ -39,36 +39,15 @@ function MyEvents(){
     return (
         <div className='content'>
             <p className='eventTitle'>My Events</p>
-            <div className='eventSection'>
+            <div className='eventCards'>
                 {events.map((event, i) =>(
-                    <div className='card' key= {i}>
-                        <div className='card-image'>
-                            <figure className='image col-m'>
-                                <a href={event.link}>
-                                    <img src={event.image} alt=''/>
-                                </a>
-                            </figure>
-                        </div>
-                        <div>
-                            <div className='media'>
-                                <div className='media-left'>
-                                <div className='media-content'>
-                                    <p className='title' key={event.id}>
-                                        {event.name}
-                                        {event.sport}
-                                    </p>
-                                </div>
-                                </div>
-                            </div>
-                            <div className='eventDescription'>
-                                {event.description}
-                                <br/>
-                                <div className='eventFooter'>
-                                    <footer className='card-footer'>
-                                        {event.time}
-                                    </footer>
-                                </div>
-                            </div>
+                    <div className='card eventBox' key= {i}>
+                        <p className='innertitle' key={event.id}>
+                            {event.name}
+                            {event.sport}
+                        </p>
+                        <div className='eventDescription'>
+                            {event.description}
                         </div>
                     </div>
                 ))}
