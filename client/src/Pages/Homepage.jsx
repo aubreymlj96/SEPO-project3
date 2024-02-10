@@ -72,13 +72,20 @@ const Home = () => {
         </div>
       ) : (
         <div className='mainHeader'>
-        <h1>Placeholder for Slogan</h1>
+          	<h1 data-heading="Friends, Fitness, Fun!">
+		          <span contenteditable data-heading="Friends, Fitness, Fun!">Friends, Fitness, Fun!</span>
+	          </h1>
+        {/* <h1 id='cube-text'>Friends, Fitness, Fun!</h1> */}
         <div className='homeBody'>
+        <img src="./shutterstock_1684288108.jpg" alt="sports-img" id="sports-img"/>
           {/* <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
           <button className='loginButton' onClick={handleLogin}>Login</button> */}
           {error && <p className='errorMessage'>{error}</p>}
           <div className="aboutMessage">
+            {/* <h1 data-heading="Why Choose Sepo">
+		          <span contenteditable data-heading="Why Choose Sepo? ">Why Choose Sepo?</span>
+	          </h1> */}
             <h2 className='sectionHeader'>Why Choose SEPO?</h2>
             <p className='message1'>SEPO brings people together through sports. This application allows promoters and teams alike to create/coordinate sport events. With SEPO, you can build your own squad and connect with like-minded sport enthusiasts.</p>
             <h2 className='sectionHeader'>Meet New People</h2>
