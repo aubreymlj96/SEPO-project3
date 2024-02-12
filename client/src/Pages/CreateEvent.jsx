@@ -44,38 +44,50 @@ const CreateEvent = ({ onCreateEvent }) => {
   };
 
   return (
-    <div className="form-container">
-      <h1>Create an Event</h1>
-      <form className="event-form" onSubmit={handleSubmit}>
-        {/* Sport Selection */}
-        <div className="form-group">
-          <label htmlFor="sport">Choose a sport:</label>
-          <select id="sport" value={sport} onChange={handleSportChange}>
-            <option value="">Select a sport</option>
-            <option value="soccer">Soccer</option>
-            <option value="football">Football</option>
-            <option value="baseball">Baseball</option>
-            <option value="basketball">Basketball</option>
-          </select>
+    <div className="container-fluid">
+      <div className="row justify-content-center align-items-center" style={{ minHeight: "80vh" }}>
+        <div className="col-md-5">
+          <div className="card">
+            <div className="card-body">
+              <h1 className="card-title text-center mb-4">Create an Event</h1>
+              <form onSubmit={handleSubmit}>
+                {/* Sport Selection */}
+                <div className="form-group">
+                  <label htmlFor="sport">Choose a sport:</label>
+                  <select className="form-control" id="sport" value={sport} onChange={handleSportChange}>
+                    <option value="">Select a sport</option>
+                    <option value="soccer">Soccer</option>
+                    <option value="football">Football</option>
+                    <option value="baseball">Baseball</option>
+                    <option value="basketball">Basketball</option>
+                  </select>
+                </div>
+      
+                {/* Date and Time Input */}
+                <div className="form-group">
+                  <label htmlFor="dateTime">Date and Time:</label>
+                  <input className="form-control" id="dateTime" type="datetime-local" value={dateTime} onChange={handleDateTimeChange} />
+                </div>
+      
+                {/* Location Input */}
+                <div className="form-group">
+                  <label htmlFor="location">Location:</label>
+                  <input className="form-control" id="location" type="text" value={location} onChange={handleLocationChange} />
+                </div>
+      
+                {/* Submit Button */}
+                <button className="btn btn-primary btn-block" type="submit">Create Event</button>
+              </form>
+            </div>
+          </div>
         </div>
-  
-        {/* Date and Time Input */}
-        <div className="form-group">
-          <label htmlFor="dateTime">Date and Time:</label>
-          <input id="dateTime" type="datetime-local" value={dateTime} onChange={handleDateTimeChange} />
-        </div>
-  
-        {/* Location Input */}
-        <div className="form-group">
-          <label htmlFor="location">Location:</label>
-          <input id="location" type="text" value={location} onChange={handleLocationChange} />
-        </div>
-  
-        {/* Submit Button */}
-        <button type="submit">Create Event</button>
-      </form>
+      </div>
     </div>
   );
+  
+  
+  
+  
   
 };
 
