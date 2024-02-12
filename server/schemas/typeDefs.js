@@ -51,6 +51,14 @@ type Auth {
     removeEvent(eventId: ID! userId: ID!): Sport
     removeComment(eventId: ID!, commentId: ID!): Sport
   }
+
+  type Query {
+    users: [User]
+    user(username: String!): User
+    events: [Sport]    # New query to fetch events
+    event(eventid: ID!): Sport
+    me: User
+  }
 `;
 
 module.exports = typeDefs;

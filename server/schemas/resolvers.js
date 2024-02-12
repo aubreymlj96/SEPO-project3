@@ -4,25 +4,24 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 const resolvers = {
     Query: {
         users: async () => {
-            return User.find().populate('events')
+          return User.find().populate('events');
         },
         user: async (parent, { username }) => {
-            return User.findOne({ username }).populate('events')
+          return User.findOne({ username }).populate('events');
         },
-        events: async (parent, { username }) => {
-            const params = username ? { username } : {};
-            return Sport.find(params).sort({ createdAt: -1 });
+        events: async () => {    // Resolver function for fetching events
+          return Sport.find().sort({ createdAt: -1 });
         },
         event: async (parent, { eventId }) => {
-            return Thought.find({ _id: eventId })
+          return Thought.find({ _id: eventId });
         },
         me: async (parent, args, context) => {
-            if (context.user) {
-                return User.findOne({ _id: context.user._id }).populate('events')
-            }
-            throw AuthenticationError
+          if (context.user) {
+            return User.findOne({ _id: context.user._id }).populate('events');
+          }
+          throw AuthenticationError;
         },
-    },
+      },
 
     Mutation: {
         addUser: async (parent, args) => {

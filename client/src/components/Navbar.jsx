@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Nav(props){
-    const tabs = ['HOME', 'MY EVENTS', 'LOGIN', 'SIGN UP', 'CREATE EVENT'];
+    const tabs = ['HOME', 'MY EVENTS', 'LOGIN', 'SIGN UP', 'CREATE EVENT','Join Event'];
     return (
         <div className='tabs center'>
             <ul className='nav' id='nav-tabs'>
