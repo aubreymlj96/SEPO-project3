@@ -97,7 +97,7 @@ body {
 }
 
 
-h1 {
+.mainHeader h1 {
 	font-family: 'Rig Bold Face', sans-serif;
 	text-transform: uppercase;
 	font-size: 60px;
@@ -112,8 +112,8 @@ h1 {
 	color: #91d4ff;
 }
 
-h1:before,
-h1:after,
+.mainHeader h1:before,
+.mainHeader h1:after,
 span:before,
 span:after {
 	content: attr(data-heading);
@@ -127,12 +127,12 @@ span:after {
 	text-shadow: none;
 }
 
-h1:before {
+.mainHeader h1:before {
 	color: #fff;
 	font-family: 'Rig Bold Inline', sans-serif;
 }
 
-h1:after {
+.mainHeader h1:after {
 	font-family: 'Rig Bold Coarse', sans-serif;
 	color: #040351;
 }
