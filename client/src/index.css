@@ -24,6 +24,7 @@ main{
 
 .header{
   background-color: lightskyblue;
+  flex-wrap: wrap;
 }
 
 #logoheader{
@@ -109,6 +110,9 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	position: absolute;
+  display: flex;
+  flex-wrap: flex;
+  flex-direction: column;
 	color: #91d4ff;
 }
 
@@ -187,8 +191,10 @@ span::after {
   /* width: 100%; */
   padding: 20px;
   background-color: white;
-  height: 90%;
+  /* height: 90%; */
   display: flex;
+  flex-wrap: flex;
+  position: absolute;
   /* display: inline-block; */
   margin-top: 100px;
   border-radius: 10px;
@@ -266,12 +272,25 @@ span::after {
   margin-bottom: 20px;
   margin-top: 300px;
   height: 650px;
+  min-height: 750px;
+  width: 500px;
   border: dotted navy 2px;
+  display: inline-block;
+  padding: 10px;
+  flex-direction: column;
 }
 
 .message1 {
   margin-bottom: 15px;
   font-size: 20px;
+}
+
+.homeCard {
+  /* display: bottom;
+  align-items: bottom; */
+  display: flex;
+  flex-direction: column;
+
 }
 
 .loginButton {
@@ -357,6 +376,76 @@ footer {
   /* width: 10px; */
   align-items: right;
 }
+
+.pp-images2{
+  height: 200px;
+  /* width: 10px; */
+  align-items: bottom;
+}
+
+.card2Pos{
+  display: flex;
+  justify-content: space-between;
+}
+
+.eventCards2{
+  /* padding-left: 200px; */
+  justify-content: center;
+  flex-wrap: flex;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100%;
+  margin-left: 150px;
+}
+
+@media (max-width: 425px) {
+  header {
+    max-width: 500px;
+    max-height: 400px;
+  }
+  header h1 {
+    font-size: 1.25em;
+  }
+  .tabs {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .eventCards {
+    width: 100%;
+  }
+  .eventCards2 {
+    width: 100%;
+  }
+  .pp-images1 {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .pp-images2 {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  header {
+    height: 400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tabs {
+    margin: 5px 50px;
+  }
+}
+
+@media (min-width: 1025px) {
+  header {
+    height: 800px;
+  }
+}
+
+
 
 
 
