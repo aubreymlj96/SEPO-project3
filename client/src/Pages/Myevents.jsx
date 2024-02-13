@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const events = [
     {
@@ -6,7 +7,7 @@ const events = [
         name: "Basketball Tourtament @ Wash Park",
         image: '',
         sport: ' Basketball',
-        description: 'Join us (the bears) at Wash Park for a competitive but fun basketball tourtament. Limited Spots available',
+        description: 'Join us (the bears) at Wash Park for a competitive but fun basketball tournament. Limited Spots available',
         date: '01/04/2024 11:00 AM EST'
     },
     {
@@ -83,13 +84,13 @@ const events = [
     },
 ]
 
-function MyEvents(){
+function MyEvents() {
     return (
         <div className='content'>
             <p className='eventTitle'>My Events</p>
             <div className='eventCards'>
-                {events.map((event, i) =>(
-                    <div className='card eventBox' key= {i}>
+                {events.map((event, i) => (
+                    <div className='card eventBox' key={i}>
                         <p className='innertitle' key={event.id}>
                             {event.name}
                             {event.sport}
@@ -99,6 +100,12 @@ function MyEvents(){
                         </div>
                     </div>
                 ))}
+            </div>
+            <div className="botwrit">
+                <h1>
+                    Looking for more events?
+                    <Link to="/join event" className="text-decoration-none"> Join Events</Link>
+                </h1>
             </div>
         </div>
     )
