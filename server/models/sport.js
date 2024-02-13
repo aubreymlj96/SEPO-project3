@@ -7,9 +7,17 @@ const sportSchema = new Schema ({
     required: true,
   },
   players: {
-    type: Number,
+    type: String,
     required: true
   },
+
+  playerIds: [
+    {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+
+    },
+],
 
     eventCreator:{
         type: String,

@@ -1,20 +1,24 @@
-import React, { useState } from 'react';
-import EventCard from '../components/EventCard';  // Adjust the import based on your project structure
+// Pages/JoinEvent.jsx
+
+import React from 'react';
+import { useQuery } from '@apollo/client';
+import { GET_EVENTS } from '../utils/queries';
+import EventCard from '../components/EventCard';
 
 const JoinEvent = () => {
-  // Example state for user-entered events
-  const [events, setEvents] = useState([
-    { id: 1, name: 'Football Game', location: 'Park A', time: '2024-02-01T18:00:00' },
-    { id: 2, name: 'Basketball Match', location: 'Court B', time: '2024-02-02T15:30:00' },
-    // Add more events as users enter them
-  ]);
+  const { loading, error, data } = useQuery(GET_EVENTS);
+console.log(data);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <div>
       <h1>Join Events</h1>
-      {events.map(event => (
-        <EventCard key={event.id} event={event} />
-      ))}
+      <div className="event-list">
+        {data.events.map(event => (
+          <EventCard key={event._id} event={event} />
+        ))}
+      </div>
     </div>
   );
 };
