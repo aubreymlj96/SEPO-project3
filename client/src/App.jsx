@@ -37,7 +37,7 @@ function App() {
       <Header/>
       <Navbar />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
       {/* <CreateEvent onCreateEvent={handleCreateEvent} /> */}
        {/* Pass onCreateEvent function */}
     </ApolloProvider>
