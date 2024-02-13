@@ -17,6 +17,7 @@ const typeDefs = gql`
     createdAt: String!
     comments: [Comment]!
     eventType: String!
+    playerIds: [User]
   }
 
   type Comment {
@@ -34,7 +35,7 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
-    events(username: String): [Sport]
+    events: [Sport]
     event(eventId: ID!): Sport
     me: User
   }
@@ -44,8 +45,9 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addEvent(eventText: String!, name: String!, players: String, eventType: String!, userId: ID!): Sport
     addComment(eventId: ID!, commentText: String!, username: String!):Sport
-    removeEvent(eventId: ID! userId: ID!): Sport
+    removeEvent(eventId: ID!, userId: ID!): Sport
     removeComment(eventId: ID!, commentId: ID!): Sport
+    joinEvent(userId: ID!, sportId: ID!, ): Sport
   }
 `;
 

@@ -11,6 +11,14 @@ const sportSchema = new Schema ({
     required: true
   },
 
+  playerIds: [
+    {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+
+    },
+],
+
     eventCreator:{
         type: String,
         required: true,

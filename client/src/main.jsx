@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         element: <SignUp />
       },
       {
-        path: 'join event',
+        path: 'Join Event',
         element: <JoinEvent />
       },
       {
