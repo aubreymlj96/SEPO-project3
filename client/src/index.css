@@ -105,8 +105,8 @@ body {
 	text-align: center;
 	font-weight: normal;
 	margin: 0;
-  margin-top: 230px;
-	top: 50%;
+  /* margin-top: 230px;
+	top: 50%; */
 	left: 50%;
 	transform: translate(-50%, -50%);
 	position: absolute;
@@ -394,8 +394,9 @@ footer {
   flex-wrap: flex;
   display: flex;
   flex-direction: column;
-  margin-top: 100%;
-  margin-left: 150px;
+  align-items: center; 
+  /* margin-top: 100%; */
+  /* margin-left: 150px; */
 }
 
 @media (max-width: 425px) {
@@ -436,6 +437,16 @@ footer {
 @media (max-width: 1024px) {
   .tabs {
     margin: 5px 50px;
+  }
+  #sports-img{
+    height: 600px;
+    margin-top: 20px;
+  }
+  .aboutMessage{
+    margin-top: 20px;
+  }
+  .pp-images2{
+    height: 150px;
   }
 }
 

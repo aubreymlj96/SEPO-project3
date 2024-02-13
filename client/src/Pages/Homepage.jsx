@@ -95,33 +95,7 @@ const Home = () => {
             <h2 className='sectionHeader'>Try New Sports</h2>
             <p className='message1'>No need to commit to a sport that you are uncertain about. All events contain specifics about skill level. All you have to do is arrive and give it a try!</p>
           </div>
-          <div className='homeCards'>
-          {/* <h2>Upcoming Events</h2> */}
           <div className="eventCards2">
-            {/* <div className="card">
-              <h3>Baseball</h3>
-              <a href="/join events">
-                <img class="pp-images2" src="/shutterstock_336247391.jpg" alt="trees"/>
-              </a>            
-              </div>
-            <div className="card">
-              <h3>Basketball</h3>
-              <a href="/join events">
-                <img class="pp-images2" src="./assets/images/tree-736885_640.jpg" alt="trees"/>
-              </a>            
-              </div>
-            <div className="card">
-              <h3>Football</h3>
-              <a href="/join events">
-                <img class="pp-images2" src="./assets/images/tree-736885_640.jpg" alt="trees"/>
-              </a>            
-              </div> */}
-          </div>
-        </div>
-          </div>
-        </div>
-      )}
-     <div className="eventCards2">
         <h2>Sports Available</h2>
       <div className='card2Pos'>
      <div className="card">
@@ -144,6 +118,9 @@ const Home = () => {
        </div>
        </div>
    </div>
+    </div>
+     </div>
+      )}
  </div>
   );
 };
