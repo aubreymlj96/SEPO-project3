@@ -4,7 +4,7 @@ import Auth from '../utils/auth';
 
 
 function Nav(props){
-    const tabs = ['HOME', 'MY EVENTS', 'LOGIN', 'SIGN UP', 'CREATE EVENT','Join Event'];
+    const tabs = ['HOME', 'MY EVENTS', 'LOGIN', 'SIGN UP', 'CREATE EVENT','JOIN EVENT'];
     return (
         
         <div className='tabs center'>
