@@ -38,7 +38,7 @@ mutation addEvent($eventText: String!, $name: String!, $eventType: String!, $use
 `;
 
 export const JOIN_EVENT = gql`
-  mutation JoinEvent($eventId: ID!) {
+  mutation joinEvent($eventId: ID!) {
     joinEvent(eventId: $eventId) {
       _id
       participants {
