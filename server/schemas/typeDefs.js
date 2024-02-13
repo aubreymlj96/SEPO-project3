@@ -18,6 +18,7 @@ const typeDefs = gql`
     comments: [Comment]!
     eventType: String!
     playerIds: [User]
+    location: String
   }
 
   type Comment {
@@ -43,7 +44,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addEvent(eventText: String!, name: String!, players: String, eventType: String!, userId: ID!): Sport
+    addEvent(eventText: String!, name: String!, players: String, eventType: String!, userId: ID!, location: String): Sport
     addComment(eventId: ID!, commentText: String!, username: String!):Sport
     removeEvent(eventId: ID!, userId: ID!): Sport
     removeComment(eventId: ID!, commentId: ID!): Sport

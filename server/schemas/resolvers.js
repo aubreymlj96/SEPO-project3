@@ -35,7 +35,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addEvent: async (parent, { eventText, name, players, eventType, userId }, context) => {
+    addEvent: async (parent, { eventText, name, players, eventType, userId, location }, context) => {
         console.log(eventType, name, userId, eventText, players);
         if (userId) {
             const sport = await Sport.create({
@@ -43,7 +43,8 @@ const resolvers = {
                 eventCreator: userId,
                 name,
                 players,
-                eventType
+                eventType,
+                location
                 
             });
             await User.findOneAndUpdate(

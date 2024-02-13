@@ -33,6 +33,7 @@ mutation addEvent($eventText: String!, $name: String!, $eventType: String!, $use
       eventText
       createdAt
       eventType
+      location
     }
   }
 `;

@@ -35,6 +35,9 @@ const sportSchema = new Schema ({
       type: String,
       enum: ['Football','Baseball', 'Basketball']
     },
+    location: {
+type: String,
+    },
 
     createdAt: {
         type: Date,
