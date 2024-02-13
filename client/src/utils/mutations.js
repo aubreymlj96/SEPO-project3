@@ -23,21 +23,27 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
     }
   } 
 `;
-
-export const SAVE_EVENT = gql`
-    mutation saveEvent($name: String!, $description: String!, $sport: String!){
-        saveEvent(description: $description, sport: $sport){
-            _id
-            username
-            email
-            savedEvents{
-                _id
-                name
-                sport
-                description
-                participants
-                time
-        }
+export const CREATE_EVENT = gql`
+mutation addEvent($eventText: String!, $name: String!, $eventType: String!, $userId: ID!, $players: String) {
+    addEvent(eventText: $eventText, name: $name, eventType: $eventType, userId: $userId, players: $players) {
+      _id
+      name
+      players
+      eventCreator
+      eventText
+      createdAt
+      eventType
     }
-} 
+  }
+`;
+
+export const JOIN_EVENT = gql`
+  mutation JoinEvent($eventId: ID!) {
+    joinEvent(eventId: $eventId) {
+      _id
+      participants {
+        _id
+      }
+    }
+  }
 `;
