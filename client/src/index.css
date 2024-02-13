@@ -195,6 +195,8 @@ span::after {
   flex-wrap: flex;
   position: relative;
   flex-direction: column;
+  width: 900px;
+  margin: 200px;
   /* display: inline-block; */
   /* margin-top: 100px; */
   border-radius: 10px;
@@ -271,9 +273,10 @@ span::after {
 .aboutMessage {
   margin-bottom: 20px;
   margin-top: 30px;
-  height: 650px;
-  min-height: 750px;
-  width: 500px;
+  margin-left: 20px;
+  height: 550px;
+  min-height: 500px;
+  width: 810px;
   border: dotted navy 2px;
   display: inline-block;
   padding: 10px;
