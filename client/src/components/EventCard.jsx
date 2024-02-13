@@ -4,7 +4,7 @@ import React from 'react';
 
 const EventCard = ({ event }) => {
   return (
-    <div className="card">
+    <div className="card eventscard1">
       <div className="card-body">
         <h5 className="card-title">{event.name}</h5>
         <p className="card-text">Event Type: {event.eventType}</p>
@@ -15,5 +15,7 @@ const EventCard = ({ event }) => {
     </div>
   );
 };
+
+
 
 export default EventCard;

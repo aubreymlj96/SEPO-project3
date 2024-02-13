@@ -343,18 +343,42 @@ span::after {
   color: #555;
 }
 
-.eventBox{
-  margin-bottom: 35px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;  
-  transition: 0.3s ease-out;
- 
+
+
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
 }
 
-.eventBox:hover{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 120px 270px -90px, rgba(0, 0, 0, 0.3) 0px 40px 70px -30px;  
-  background-color: #EDEEEE;
-
+.eventscard1 {
+  width: calc(33.33% - 20px); 
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: .4s ease-in-out;
 }
+
+.eventscard1:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #DEE2E6;
+}
+
+
+
+
+@media (max-width: 992px) {
+  .card {
+    width: calc(50% - 20px); 
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: calc(100% - 20px); 
+  }
+}
+
 
 footer {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
