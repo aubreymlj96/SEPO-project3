@@ -19,6 +19,7 @@ body{
 
 main{
   background-color: white;
+  max-height: 100%;
 }
 
 
@@ -45,6 +46,7 @@ main{
   width: 100%;
   margin: 0;
   padding: 0;
+  flex-direction: column;
 }
 
 .tabs {
@@ -65,15 +67,14 @@ main{
 #navOptions{
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   margin-left: 30px;
-  /* margin-left: 100px;
-  margin-right: 150px; */
-  /* margin-inline-end: 200px; */
   border: dotted lightgrey 1px;
   background-color: rgb(205, 236, 247);
+  flex-direction: column;
 }
 
 .container {
   display: flex;
+  flex-direction: column;
   /* justify-content: center;
   align-items: center; */
   width: 100vw;
@@ -83,17 +84,12 @@ main{
 .mainHeader{
   margin-top: 90px;
 }
-  
-/* body
-  min-height: 200px
-  height: 100vh
-  position: relative
-  background-color: cyan */
 
 body {
     min-height: 200px;
-    height: 50vh;
+    height: 100vh;
     position: relative;
+    flex-direction: column;
     /* background-color: cyan; */
 }
 
@@ -180,10 +176,13 @@ span::after {
 
 #sports-img{
   height: 800px;
+  width: 800px;
   margin-top: 200px;
   /* margin-right: 700px; */
   flex: 0 0 auto;
   float: left 20px;
+  margin: auto 0;
+  flex-direction: column;
 }
 
 .homeBody {
@@ -194,9 +193,10 @@ span::after {
   /* height: 90%; */
   display: flex;
   flex-wrap: flex;
-  position: absolute;
+  position: relative;
+  flex-direction: column;
   /* display: inline-block; */
-  margin-top: 100px;
+  /* margin-top: 100px; */
   border-radius: 10px;
   border: solid navy 2px;
   box-shadow: 0 0 20px lightskyblue;
@@ -208,7 +208,7 @@ span::after {
   padding: 20px;
   background-color: beige;
   height: 500px;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   flex-direction: column;
@@ -270,7 +270,7 @@ span::after {
 
 .aboutMessage {
   margin-bottom: 20px;
-  margin-top: 300px;
+  margin-top: 30px;
   height: 650px;
   min-height: 750px;
   width: 500px;
@@ -278,6 +278,9 @@ span::after {
   display: inline-block;
   padding: 10px;
   flex-direction: column;
+  overflow: break-word;
+  /* margin-left: 600px; */
+  /* float: right 20px; */
 }
 
 .message1 {
@@ -363,8 +366,9 @@ footer {
   text-align: center;
   /* padding: 20px; */
   /* position: fixed; */
-  bottom: 0;
-  left: 0;
+  margin-top: 600px;
+  /* bottom: 0; */
+  /* left: 0; */
 }
 
 .footerContent {
@@ -386,22 +390,28 @@ footer {
 .card2Pos{
   display: flex;
   justify-content: space-between;
+  /* border: solid black 2px; */
 }
 
 .eventCards2{
+  /* border: solid navy 2px; */
+  max-height: 400px;
   /* padding-left: 200px; */
   justify-content: center;
+  align-items: center;
+  /* margin: 100px; */
   flex-wrap: flex;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
-  align-items: center; 
-  /* margin-top: 100%; */
+  position: relative;
+  bottom: 0;
+  margin: 100px;
   /* margin-left: 150px; */
 }
 
 @media (max-width: 425px) {
   header {
-    max-width: 500px;
+    max-width: 800px;
     max-height: 400px;
   }
   header h1 {
@@ -409,6 +419,25 @@ footer {
   }
   .tabs {
     flex-direction: column;
+    width: 600px;
+    margin-bottom: 50px;
+  }
+  .header {
+    height: 500px;
+    width: 600px;
+  }
+  #sports-img{
+    max-height: 300px;
+    max-width: 300px;
+  }
+  .aboutMessage{
+    max-width: 300px;
+  }
+  .message1{
+    font-size: 12px;
+  }
+  footer{
+    width: 570px;
   }
 }
 
@@ -420,7 +449,7 @@ footer {
     width: 100%;
   }
   .pp-images1 {
-    width: 100%;
+    width: 50px;
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -428,16 +457,15 @@ footer {
     width: 100%;
     margin-top: 0;
     margin-bottom: 0;
+    align-items: center;
   }
-  header {
-    height: 400px;
+  #sports-img{
+    width: 600px
   }
+
 }
 
 @media (max-width: 1024px) {
-  .tabs {
-    margin: 5px 50px;
-  }
   #sports-img{
     height: 600px;
     margin-top: 20px;
@@ -447,6 +475,9 @@ footer {
   }
   .pp-images2{
     height: 150px;
+  }
+  footer{
+    margin-top: 1800px;
   }
 }
 
