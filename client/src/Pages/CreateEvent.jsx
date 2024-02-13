@@ -123,58 +123,53 @@ const CreateEvent = ({ onCreateEvent }) => {
   };
 
   return (
-    <div className="form-container">
-      <h1>Create an Event</h1>
-      <form className="event-form" onSubmit={handleSubmit}>
-        {/* Sport Selection */}
-        <div className="form-group">
-          <label htmlFor="sport">Choose a sport:</label>
-          <select id="sport" value={sport} onChange={(e) => setSport(e.target.value)}>
-            <option value="">Select a sport</option>
-            <option value="Football">Football</option>
-            <option value="Baseball">Baseball</option>
-            <option value="Basketball">Basketball</option>
-          </select>
-        </div>
+    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: "90vh", marginBottom: "5vh" }}>
+      <div className="row">
+        <div className="col">
+          <div className="text-center">
+            <h1>Create an Event</h1>
+          </div>
+          <form onSubmit={handleSubmit}>
+            {/* Sport Selection */}
+            <div className="mb-3">
+              <label htmlFor="sport" className="form-label">Choose a sport:</label>
+              <select id="sport" className="form-select" value={sport} onChange={(e) => setSport(e.target.value)}>
+                <option value="">Select a sport</option>
+                <option value="Football">Football</option>
+                <option value="Baseball">Baseball</option>
+                <option value="Basketball">Basketball</option>
+              </select>
+            </div>
   
-        {/* Date and Time Input
-        <div className="form-group">
-          <label htmlFor="dateTime">Date and Time:</label>
-          <input id="dateTime" type="datetime-local" value={dateTime} onChange={(e) => setDateTime(e.target.value)} />
-        </div> */}
+            {/* Players */}
+            <div className="mb-3">
+              <label htmlFor="players" className="form-label">Players:</label>
+              <input id="players" type="number" className="form-control" value={players} onChange={(e) => setPlayers(e.target.value)} />
+            </div>
   
-        {/* Location Input */}
-        {/* <div className="form-group">
-          <label htmlFor="location">Location:</label>
-          <input id="location" type="text" value={location} onChange={(e) => setLocation(e.target.value)} />
-        </div> */}
-
-        {/* Max People Input */}
-        {/* <div className="form-group">
-          <label htmlFor="maxPeople">Maximum People:</label>
-          <input id="maxPeople" type="number" value={maxPeople} onChange={(e) => setMaxPeople(e.target.value)} />
-        </div> */}
-
-        <div className="form-group">
-          <label htmlFor="players">players:</label>
-          <input id="players" type="number" value={players} onChange={(e) => setPlayers(e.target.value)} />
-        </div>
+            {/* Event Name */}
+            <div className="mb-3">
+              <label htmlFor="eventName" className="form-label">Name:</label>
+              <input id="eventName" type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
+            </div>
   
-        <div className="form-group">
-          <label htmlFor="name">name:</label>
-          <input id="eventName" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            {/* Event Text */}
+            <div className="mb-3">
+              <label htmlFor="eventText" className="form-label">Text:</label>
+              <input id="eventText" type="text" className="form-control" value={eventText} onChange={(e) => setEventText(e.target.value)} />
+            </div>
+  
+            {/* Submit Button */}
+            <div className="text-center">
+              <button type="submit" className="btn btn-primary">Create Event</button>
+            </div>
+          </form>
         </div>
-
-        <div className="form-group">
-          <label htmlFor="eventText">Text:</label>
-          <input id="eventText" type="text" value={eventText} onChange={(e) => setEventText(e.target.value)} />
-        </div>
-
-        {/* Submit Button */}
-        <button type="submit">Create Event</button>
-      </form>
+      </div>
     </div>
   );
+  
+  
 };
 
 CreateEvent.propTypes = {
@@ -183,3 +178,23 @@ CreateEvent.propTypes = {
 };
 
 export default CreateEvent;
+
+
+
+      /* Date and Time Input
+        <div className="form-group">
+          <label htmlFor="dateTime">Date and Time:</label>
+          <input id="dateTime" type="datetime-local" value={dateTime} onChange={(e) => setDateTime(e.target.value)} />
+        </div> */
+  
+        /* Location Input */
+        /* <div className="form-group">
+          <label htmlFor="location">Location:</label>
+          <input id="location" type="text" value={location} onChange={(e) => setLocation(e.target.value)} />
+        </div> */
+
+        /* Max People Input */
+        /* <div className="form-group">
+          <label htmlFor="maxPeople">Maximum People:</label>
+          <input id="maxPeople" type="number" value={maxPeople} onChange={(e) => setMaxPeople(e.target.value)} />
+        </div> */
