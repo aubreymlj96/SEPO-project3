@@ -7,7 +7,7 @@ const sportSchema = new Schema ({
     required: true,
   },
   players: {
-    type: Number,
+    type: String,
     required: true
   },
 
