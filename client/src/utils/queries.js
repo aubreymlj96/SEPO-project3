@@ -2,21 +2,26 @@ import { gql } from '@apollo/client';
 
 
 export const GET_EVENTS = gql`
-  query GetEvents {
+  query getEvents {
     events {
       _id
       name
-      dateTime
-      location
-      maxPeople
-      participants {
-        _id
-      }
+      players
+      eventCreator
+      eventText
+      createdAt
+      eventType
+      
     }
   }
 `;
 
-
+// players
+//       eventCreator
+//       
+//       playerIds
+//       
+//       
 
 
 export const getMapQuestData = async (location) => {

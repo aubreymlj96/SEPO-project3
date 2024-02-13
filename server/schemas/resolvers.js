@@ -5,9 +5,9 @@ const resolvers = {
   Query: {
     users: async () => User.find().populate('events'),
     user: async (_, { username }) => User.findOne({ username }).populate('events'),
-    events: async (_, { username }) => {
-      const params = username ? { username } : {};
-      return Sport.find(params).sort({ createdAt: -1 });
+    events: async (_, args ) => {
+      // const params = username ? { username } : {};
+      return Sport.find()
     },
     event: async (_, { eventId }) => Sport.findById(eventId),
     me: async (_, __, { user }) => {
@@ -55,6 +55,22 @@ const resolvers = {
         // throw AuthenticationError;
         ('You must be logged in to create an event');
     },
+
+    joinEvent: async (parent, {userId, sportId}, context) => {
+console.log(userId, sportId);
+      if (userId) {
+        await Sport.findOneAndUpdate(
+          { _id: sportId },
+          { $push: { playerIds: userId } }
+        );
+        await User.findByIdAndUpdate(
+          { _id: userId },
+          { $push: { events: sportId } }
+      );
+     
+      }
+    },
+
     addComment: async (_, { eventId, commentText }, { user }) => {
       if (user) {
         const sport = await Sport.findByIdAndUpdate(
