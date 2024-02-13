@@ -1,10 +1,9 @@
-import React from 'react';
-import { useQuery } from '@apollo/client'; // Import useQuery hook
+import { useQuery } from '@apollo/client';
 import EventCard from '../components/EventCard';
-import { GET_EVENTS } from '../utils/queries'; // Import the GraphQL query for fetching events
+import { GET_EVENTS } from '../utils/queries';
 
 const JoinEvent = () => {
-  const { loading, error, data } = useQuery(GET_EVENTS); // Use the useQuery hook to execute the GraphQL query
+  const { loading, error, data } = useQuery(GET_EVENTS);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error fetching events: {error.message}</p>;

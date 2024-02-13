@@ -1,15 +1,5 @@
 import { gql } from '@apollo/client';
 
-export const CREATE_EVENT = gql`
-  mutation CreateEvent($input: EventInput!) {
-    createEvent(input: $input) {
-      _id
-      name
-      dateTime
-      location
-    }
-  }
-`;
 
 export const GET_EVENTS = gql`
   query GetEvents {
@@ -18,9 +8,16 @@ export const GET_EVENTS = gql`
       name
       dateTime
       location
+      maxPeople
+      participants {
+        _id
+      }
     }
   }
 `;
+
+
+
 
 export const getMapQuestData = async (location) => {
   try {
