@@ -419,16 +419,28 @@ footer {
   }
   .tabs {
     flex-direction: column;
-    width: 600px;
+    width: 420px;
     margin-bottom: 50px;
   }
   .header {
     height: 500px;
-    width: 600px;
+    width: 420px;
   }
+
   #sports-img{
     max-height: 300px;
     max-width: 300px;
+  }
+  .eventCards2{
+    margin: auto 0;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
+  .pp-images2{
+    max-height: 50px;
+  }
+  #logoheader{
+    height: 400px;
   }
   .aboutMessage{
     max-width: 300px;
@@ -437,7 +449,7 @@ footer {
     font-size: 12px;
   }
   footer{
-    width: 570px;
+    width: 420px;
   }
 }
 
