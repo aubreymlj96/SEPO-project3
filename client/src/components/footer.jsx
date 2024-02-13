@@ -13,7 +13,9 @@ function Footer(){
                 <h3>Get Involved!</h3>
                 <ul>
                     <li>
-                   <a href="/signup">Sign Up</a> 
+                   <a href="/signup">Sign Up</a>
+                   </li> 
+                   <li>
                    <a href="/login">Login</a> 
                    </li>
                 </ul>
