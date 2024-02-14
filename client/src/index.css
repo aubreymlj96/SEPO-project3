@@ -195,6 +195,8 @@ span::after {
   flex-wrap: flex;
   position: relative;
   flex-direction: column;
+  width: 900px;
+  margin: 200px;
   /* display: inline-block; */
   /* margin-top: 100px; */
   border-radius: 10px;
@@ -271,9 +273,10 @@ span::after {
 .aboutMessage {
   margin-bottom: 20px;
   margin-top: 30px;
-  height: 650px;
-  min-height: 750px;
-  width: 500px;
+  margin-left: 20px;
+  height: 550px;
+  min-height: 500px;
+  width: 810px;
   border: dotted navy 2px;
   display: inline-block;
   padding: 10px;
@@ -443,16 +446,28 @@ footer {
   }
   .tabs {
     flex-direction: column;
-    width: 600px;
+    width: 420px;
     margin-bottom: 50px;
   }
   .header {
     height: 500px;
-    width: 600px;
+    width: 420px;
   }
+
   #sports-img{
     max-height: 300px;
     max-width: 300px;
+  }
+  .eventCards2{
+    margin: auto 0;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
+  .pp-images2{
+    max-height: 50px;
+  }
+  #logoheader{
+    height: 400px;
   }
   .aboutMessage{
     max-width: 300px;
@@ -461,7 +476,7 @@ footer {
     font-size: 12px;
   }
   footer{
-    width: 570px;
+    width: 420px;
   }
 }
 

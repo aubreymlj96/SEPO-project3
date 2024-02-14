@@ -19,6 +19,7 @@ Introducing S.E.P.O (Sporting Event Promoters Online), the ultimate solution for
 - [How to Use SEPO](#how-to-use-the-app)
 - [Badges](#badges)
 - [Contributors](#contributors)
+- [Credits](#credits)
 - [Licsense](#licsence)
 
 
@@ -76,6 +77,14 @@ To use SEPO, you can first siggn up, by going to the "Sign Up" tab in the header
 [Garrett Sheppard](https://github.com/gmoney3303)
 
 [Evan Fodemski](https://github.com/EvanFodemski)
+
+## Credits
+
+[SEPO Logo Source](https://express.adobe.com/express-apps/logo-maker/preview)
+[Sports-Available-Images](https://www.shutterstock.com/image-vector/sports-mix-sport-players-action-cartoon-1684288108)
+[Main-Sports-Image](https://www.shutterstock.com/image-vector/)
+[Slogan-Styling-Reference](https://codepen.io/mandymichael/pen/bWqyMN)
+[Instagram](https://www.instagram.com/sporteventpromotersonline/)
 
 ## Licsence
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
