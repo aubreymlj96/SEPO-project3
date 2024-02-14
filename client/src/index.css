@@ -593,6 +593,13 @@ footer {
   }
 }
 
+
+@media (min-width: 1440px){
+  footer{
+    margin-top: 2000px;
+  }
+}
+
 @media (min-width: 2560px){
   footer{
     margin-top: 1500px;
