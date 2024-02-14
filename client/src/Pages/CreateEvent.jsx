@@ -14,7 +14,7 @@ const CreateEvent = ({ onCreateEvent }) => {
   const [players, setPlayers] = useState('');
   const [name, setName] = useState('');
   const [eventText, setEventText] = useState('');
-  // const [dateTime, setDateTime] = useState('');
+   const [DateTime, setDateTime] = useState('');
    const [location, setLocation] = useState('');
   // const [maxPeople, setMaxPeople] = useState('');
 
@@ -35,11 +35,11 @@ const CreateEvent = ({ onCreateEvent }) => {
     console.log(sport, name, user, eventText, players, location);
     try {
       const { data } = await addEvent({
-        variables:  { eventType:sport, name:name, players:players, userId: user, eventText:eventText, location:location } },
+        variables:  {  eventType:sport, name:name, players:players, userId: user, eventText:eventText, DateTime:DateTime, location:location } },
       );
       // onCreateEvent(data.createEvent);
       setSport('');
-      // setDateTime('');
+       setDateTime('');
        setLocation('');
       // setMaxPeople('');
       setName('');
@@ -65,11 +65,11 @@ const CreateEvent = ({ onCreateEvent }) => {
           </select>
         </div>
   
-        {/* Date and Time Input
+        {/* Date and Time Input */}
         <div className="form-group">
           <label htmlFor="dateTime">Date and Time:</label>
-          <input id="dateTime" type="datetime-local" value={dateTime} onChange={(e) => setDateTime(e.target.value)} />
-        </div> */}
+          <input id="dateTime" type="datetime-local" value={DateTime} onChange={(e) => setDateTime(e.target.value)} />
+        </div>
   
         {/* Location Input */}
         <div className="form-group">

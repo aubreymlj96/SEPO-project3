@@ -38,6 +38,9 @@ const sportSchema = new Schema ({
     location: {
 type: String,
     },
+    DateTime: {
+      type: String,
+    },
 
     createdAt: {
         type: Date,
