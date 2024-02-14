@@ -24,8 +24,8 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
   } 
 `;
 export const CREATE_EVENT = gql`
-mutation addEvent($eventText: String!, $name: String!, $eventType: String!, $userId: ID!, $players: String) {
-    addEvent(eventText: $eventText, name: $name, eventType: $eventType, userId: $userId, players: $players) {
+mutation addEvent($eventText: String!, $name: String!, $eventType: String!, $userId: ID!, $players: String, $location: String!) {
+    addEvent(eventText: $eventText, name: $name, eventType: $eventType, userId: $userId, players: $players, location: $location) {
       _id
       name
       players
@@ -33,6 +33,7 @@ mutation addEvent($eventText: String!, $name: String!, $eventType: String!, $use
       eventText
       createdAt
       eventType
+      location
     }
   }
 `;
