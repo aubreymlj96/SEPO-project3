@@ -4,15 +4,19 @@ import { getMapQuestData } from '../utils/queries';
 
 const EventCard = ({ event }) => {
   const [locationImage, setLocationImage] = useState(null);
+  const [latitude, setLatitude] = useState(null);
+  const [longitude, setLongitude] = useState(null);
 
   useEffect(() => {
     const fetchLocationImage = async () => {
       try {
-        // Fetch location data using the getMapQuestData function
         const locationData = await getMapQuestData(event.location);
         if (locationData && locationData.results && locationData.results[0]) {
-          const { displayString, place } = locationData.results[0];
-          setLocationImage(place?.photoUrl || null);
+          const { latLng } = locationData.results[0].locations[0];
+          setLatitude(latLng.lat);
+          setLongitude(latLng.lng);
+          const mapImage = `https://www.openstreetmap.org/export/embed.html?bbox=${longitude-0.1}%2C${latitude-0.1}%2C${longitude+0.1}%2C${latitude+0.1}&amp;layer=mapnik`;
+          setLocationImage(mapImage);
         }
       } catch (error) {
         console.error('Error fetching location data:', error);
@@ -31,8 +35,7 @@ const EventCard = ({ event }) => {
         <p className="card-text">Event Text: {event.eventText}</p>
         {locationImage && (
           <div className="location-image">
-            {/* Render the location image */}
-            <img src={locationImage} alt="Location" />
+            <iframe width="100%" height="300" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={locationImage}></iframe>
             <p>{event.location}</p>
           </div>
         )}
@@ -42,4 +45,3 @@ const EventCard = ({ event }) => {
 };
 
 export default EventCard;
-

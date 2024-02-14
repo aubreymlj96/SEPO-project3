@@ -21,11 +21,12 @@ export const GET_EVENTS = gql`
 //        
 //       playerIds
 //       
-//       
+//        console.log(location);
 
 
 export const getMapQuestData = async (location) => {
   try {
+    console.log(location);
     const MAPQUEST_API_KEY = 'YShBjYux21G3IIZulMOwJ1UqYpLaPAdx';
     const response = await fetch(
       `https://www.mapquestapi.com/geocoding/v1/address?key=${MAPQUEST_API_KEY}&location=${encodeURIComponent(location)}`
@@ -42,3 +43,5 @@ export const getMapQuestData = async (location) => {
     throw error;
   }
 };
+
+
