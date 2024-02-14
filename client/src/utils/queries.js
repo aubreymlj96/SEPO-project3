@@ -12,6 +12,7 @@ export const GET_EVENTS = gql`
       createdAt
       eventType
      location
+     DateTime
     }
   }
 `;

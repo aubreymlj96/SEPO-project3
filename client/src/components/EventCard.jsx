@@ -33,11 +33,14 @@ const EventCard = ({ event }) => {
         <p className="card-text">Event Type: {event.eventType}</p>
         <p className="card-text">Players: {event.players}</p>
         <p className="card-text">Event Text: {event.eventText}</p>
+        <p className="card-text">DateTime: {event.DateTime}</p>
         {locationImage && (
           <div className="location-image">
             <iframe width="100%" height="300" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={locationImage}></iframe>
             <p>{event.location}</p>
+            
           </div>
+          
         )}
       </div>
     </div>

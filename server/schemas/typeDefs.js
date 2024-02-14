@@ -22,6 +22,7 @@ const typeDefs = gql`
     eventType: String!
     playerIds: [User]
     location: String!
+    DateTime: String
   }
 
   type Comment {
@@ -48,7 +49,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addEvent(eventText: String!, name: String!, players: String, eventType: String!, userId: ID!, location: String!): Sport
+    addEvent(eventText: String!, name: String!, players: String, eventType: String!, userId: ID!, location: String!, DateTime: String!): Sport
     addComment(eventId: ID!, commentText: String!, username: String!):Sport
     removeEvent(eventId: ID!, userId: ID!): Sport
     removeComment(eventId: ID!, commentId: ID!): Sport
