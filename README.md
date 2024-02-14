@@ -1,7 +1,7 @@
 # SEPO-project3
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[Link To live Deploy](placeholder)
+[Link To live Deploy](https://eventfinder-hvdq.onrender.com)
 
 
 ## Sporting event scheduler
@@ -35,6 +35,7 @@ Introducing S.E.P.O (Sporting Event Promoters Online), the ultimate solution for
 ![alt text](client/public/README1.png)
 ![alt text](client/public/README2.png)
 ![alt text](client/public/README3.png)
+![alt text](client/public/Capture.JPG)
 
 ## How to install and run the project
 
