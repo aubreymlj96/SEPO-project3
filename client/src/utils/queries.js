@@ -11,14 +11,14 @@ export const GET_EVENTS = gql`
       eventText
       createdAt
       eventType
-      
+     location
     }
   }
 `;
 
 // players
 //       eventCreator
-//       
+//        
 //       playerIds
 //       
 //       
@@ -28,7 +28,7 @@ export const getMapQuestData = async (location) => {
   try {
     const MAPQUEST_API_KEY = 'YShBjYux21G3IIZulMOwJ1UqYpLaPAdx';
     const response = await fetch(
-      `https://www.mapquestapi.com/search/v4/place?location=${encodeURIComponent(location)}&key=${MAPQUEST_API_KEY}`
+      `https://www.mapquestapi.com/geocoding/v1/address?key=${MAPQUEST_API_KEY}&location=${encodeURIComponent(location)}`
     );
 
     if (!response.ok) {

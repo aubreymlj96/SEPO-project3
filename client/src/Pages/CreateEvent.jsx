@@ -15,7 +15,7 @@ const CreateEvent = ({ onCreateEvent }) => {
   const [name, setName] = useState('');
   const [eventText, setEventText] = useState('');
   // const [dateTime, setDateTime] = useState('');
-  // const [location, setLocation] = useState('');
+   const [location, setLocation] = useState('');
   // const [maxPeople, setMaxPeople] = useState('');
 
   const [addEvent] = useMutation(CREATE_EVENT)
@@ -32,15 +32,15 @@ const CreateEvent = ({ onCreateEvent }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(sport, name, user, eventText, players);
+    console.log(sport, name, user, eventText, players, location);
     try {
       const { data } = await addEvent({
-        variables:  { eventType:sport, name:name, players:players, userId: user, eventText:eventText } },
+        variables:  { eventType:sport, name:name, players:players, userId: user, eventText:eventText, location:location } },
       );
       // onCreateEvent(data.createEvent);
       setSport('');
       // setDateTime('');
-      // setLocation('');
+       setLocation('');
       // setMaxPeople('');
       setName('');
       setPlayers('');
@@ -72,10 +72,10 @@ const CreateEvent = ({ onCreateEvent }) => {
         </div> */}
   
         {/* Location Input */}
-        {/* <div className="form-group">
+        <div className="form-group">
           <label htmlFor="location">Location:</label>
           <input id="location" type="text" value={location} onChange={(e) => setLocation(e.target.value)} />
-        </div> */}
+        </div>
 
         {/* Max People Input */}
         {/* <div className="form-group">
