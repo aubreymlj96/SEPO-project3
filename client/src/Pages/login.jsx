@@ -38,7 +38,7 @@ const Login = (props) => {
 
     return (
         <main className="d-flex justify-content-center mt-5 mb-5"> {/* Added mb-5 for margin bottom */}
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-3">
                 <div className="card shadow-sm">
                     <div className="card-body">
                         {data ? (

@@ -51,10 +51,10 @@ const CreateEvent = ({ onCreateEvent }) => {
   };
 
   return (
-<div className="container mt-5">
+    <div className="container2 mt-5">
       <div className="row justify-content-center">
-        <div className="col-md-8">
-          <h1>Create an Event</h1>
+        <div className="col-md-3">
+          <h1 className="text-center">Create an Event</h1>
           <form onSubmit={handleSubmit}>
             {/* Sport Selection */}
             <div className="form-group">
@@ -89,7 +89,9 @@ const CreateEvent = ({ onCreateEvent }) => {
               <input className="form-control" id="eventText" type="text" value={eventText} onChange={(e) => setEventText(e.target.value)} />
             </div>
             {/* Submit Button */}
-            <button className="btn btn-primary mt-3" type="submit">Create Event</button>
+            <div className="text-center">
+              <button className="btn btn-primary mt-3" type="submit">Create Event</button>
+            </div>
           </form>
         </div>
       </div>

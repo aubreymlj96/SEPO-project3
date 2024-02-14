@@ -48,7 +48,7 @@ console.log(data);
 
   return (
     <div className="d-flex justify-content-center mt-5 mb-5"> {/* Add margin-top here */}
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-3">
             <div className="card shadow-sm">
                 <div className="card-body">
                     <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
