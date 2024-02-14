@@ -1,11 +1,31 @@
 // components/EventCard.jsx
 import React, { useEffect, useState } from 'react';
 import { getMapQuestData } from '../utils/queries';
+import { useMutation } from '@apollo/client'; 
+import { JOIN_EVENT } from '../utils/mutations';
+
+const handleJoinEvent = async () => {
+  try {
+    // Call the joinEvent mutation here
+    await joinEventMutation({
+      variables: {
+        userId: currentUser.id,
+        sportId: event._id
+      }
+    });
+    // Optionally, you can perform additional logic after joining the event
+    console.log('Successfully joined the event!');
+  } catch (error) {
+    console.error('Error joining the event:', error);
+  }
+};
 
 const EventCard = ({ event }) => {
   const [locationImage, setLocationImage] = useState(null);
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
+
+  const [joinEvent] = useMutation(JOIN_EVENT);
 
   useEffect(() => {
     const fetchLocationImage = async () => {
@@ -38,10 +58,9 @@ const EventCard = ({ event }) => {
           <div className="location-image">
             <iframe width="100%" height="300" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={locationImage}></iframe>
             <p>{event.location}</p>
-            
-          </div>
-          
+          </div>      
         )}
+        <button onClick={joinEvent} className="btn btn-primary">Join Event</button>
       </div>
     </div>
   );
